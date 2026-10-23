@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support Princeton Digital Laboratory — donate to fund independent research in ethical AI, digital twins, and open education." />
+  <title>Donate — Princeton Digital Laboratory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="donate-hero">
+    <h1>Support independent research</h1>
+    <p>Your contribution funds ethical AI exploration, digital twin research, and open education programs in Princeton, NJ.</p>
+  </section>
+
+  <div class="donate-body">
+
+    <!-- Zeffy embed -->
+    <h2>Donate by card</h2>
+    <p style="color:#666; font-size:15px; margin-bottom:24px;">
+      We use <a href="https://www.zeffy.com" target="_blank" rel="noopener">Zeffy</a> — a 100% fee-free platform for nonprofits.
+      Every dollar you give goes directly to PDL.
+    </p>
+
+    <!--
+      INSTRUCTIONS: Once your Zeffy donation form is created:
+      1. Go to your Zeffy dashboard → your donation form → Share → Embed
+      2. Copy the iframe src URL
+      3. Replace the src below with your actual Zeffy embed URL
+      Example: src="https://www.zeffy.com/en-US/embed/donation-form/YOUR-FORM-ID"
+    -->
+    <iframe
+      class="zeffy-embed"
+      src="about:blank"
+      id="zeffy-frame"
+      title="PDL donation form"
+      allowpaymentrequest
+    ></iframe>
+
+    <div id="zeffy-placeholder" style="
+      border: 2px dashed #d0d0d0;
+      border-radius: 6px;
+      padding: 48px 24px;
+      text-align: center;
+      color: #888;
+      font-size: 15px;
+      margin-bottom: 48px;
+    ">
+      <p style="margin-bottom:8px; font-weight:600; color:#333;">Zeffy donation form — coming soon</p>
+      <p>Once the PDL Zeffy account is set up, the donation form will appear here.<br />
+      In the meantime, please use Venmo below or <a href="mailto:info@princetondigitallabs.org">contact us</a>.</p>
+    </div>
+
+    <!-- Venmo section -->
+    <div class="venmo-section">
+      <h2>Donate via Venmo</h2>
+      <p>Scan the QR code or search for us on Venmo.</p>
+
+      <!--
+        INSTRUCTIONS: Once your PDL Venmo Business account is set up:
+        1. Open Venmo → your profile → Share → Download QR code
+        2. Save as venmo-qr.png and place it in the images/ folder
+        3. Replace the placeholder div below with:
+           <img src="images/venmo-qr.png" alt="Venmo QR code for PDL" width="180" />
+      -->
+      <div class="venmo-qr-placeholder">
+        Venmo QR code<br />coming soon
+      </div>
+
+      <p style="font-size:14px; color:#888; margin-top:8px;">@PrincetonDigitalLab</p>
+    </div>
+
+    <div class="tax-note">
+      Princeton Digital Laboratory Corp. is a 501(c)(3) nonprofit organization (EIN 33-1846427).
+      Donations are tax-deductible to the extent permitted by law.
+      No goods or services are provided in exchange for your contribution.
+    </div>
+
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPage('donate.html');
+
+      // Hide the iframe until the Zeffy src is set
+      const frame = document.getElementById('zeffy-frame');
+      const placeholder = document.getElementById('zeffy-placeholder');
+      if (frame.src === 'about:blank' || frame.src === '') {
+        frame.style.display = 'none';
+      } else {
+        placeholder.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
